@@ -9,7 +9,7 @@ using namespace std;
 void addItem( const string& item_id, const string& item_name, const string& item_quantity,const string& item_registration_date ){
     ofstream file("inventory.csv", ios::app);
     if (file.is_open()){
-        file << item_id << ',' << item_name << ',' << item_quantity << ',' << item_registration_date << '\n';
+        file <<"item id: "<< item_id << ',' <<"item name: "<< item_name << ',' <<"item quantity: "<< item_quantity << ',' <<"item registration date"<< item_registration_date << '\n';
         file.close();
         cout<<"items added successfully\n";
     }
@@ -35,7 +35,7 @@ void listItems(){
 }
 int main(){
     string cont = "yes";
-    while(cont =="yes"){
+    while(cont != "exit"){
     string command1;
     string itemDetails;
     string item_id;
@@ -54,13 +54,13 @@ int main(){
             listItems();
         }
         else if (command1 == "help"){
-            cout<<"enter the command then enter the items details and separate them using space";
+            cout<<"enter the command itemadd, <item_id> <item_name> <item_quantity> <item_registration_date>";
         }
         else{
-            cout<<"the code was incorecct";
+            cout<<"the code was incorecct\n ";
         }
 
-        cout<<"do you want to continue?:";
+        cout<<"do you want to continue?(enter exit to terminate):";
         cin>>cont;
     }
 
