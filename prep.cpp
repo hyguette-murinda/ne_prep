@@ -34,6 +34,8 @@ void listItems(){
     }
 }
 int main(){
+    string cont = "yes";
+    while(cont =="yes"){
     string command1;
     string itemDetails;
     string item_id;
@@ -44,16 +46,24 @@ int main(){
     cin>>command1;
     transform(command1.begin(), command1.end(), command1.begin(), ::tolower);
     if(command1 =="itemadd"){
-
         cout<<"enter the item_id, name, quantity and registeration date, add them at the same time separate them using space: ";
         cin>> item_id>>item_name>>item_quantity>>item_registration_date;
         addItem(item_id, item_name, item_quantity, item_registration_date);
-
         }
-    else{
-        cout<<"couldn't perform the action";
+        else if ( command1 =="listitems"){
+            listItems();
+        }
+        else if (command1 == "help"){
+            cout<<"enter the command then enter the items details and separate them using space";
+        }
+        else{
+            cout<<"the code was incorecct";
+        }
+
+        cout<<"do you want to continue?:";
+        cin>>cont;
     }
-    listItems();
+
     return 0;
 }
 
