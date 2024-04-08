@@ -42,7 +42,7 @@ int main(){
     string item_name;
     string item_quantity;
     string item_registration_date;
-    cout<<" please enter the command: ";
+    cout<<" please enter the command:itemadd to add an item, itemsLists to list items";
     cin>>command1;
     transform(command1.begin(), command1.end(), command1.begin(), ::tolower);
     if(command1 =="itemadd"){
@@ -50,7 +50,7 @@ int main(){
         cin>> item_id>>item_name>>item_quantity>>item_registration_date;
         addItem(item_id, item_name, item_quantity, item_registration_date);
         }
-        else if ( command1 =="listitems"){
+        else if ( command1 =="itemsLists)
             listItems();
         }
         else if (command1 == "help"){
