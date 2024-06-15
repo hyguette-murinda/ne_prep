@@ -54,13 +54,20 @@ int main(){
             listItems();
         }
         else if (command1 == "help"){
-            cout<<"enter the command itemadd, <item_id> <item_name> <item_quantity> <item_registration_date>";
+            cout<<"------------"<<endl;
+            cout<<"command syntax"<<endl;
+            cout<<"------------"<<endl;
+            cout<<"itemadd <item_id> <item_name> <item_quantity> <item_registration_date>"<<endl;
+            cout<<"itemsLists";
+        }
+        else if(command1 == "exit"){
+            return 0;
         }
         else{
             cout<<"the code was incorecct\n ";
         }
 
-        cout<<"do you want to continue?(enter exit to terminate):";
+        cout<<"\ndo you want to continue?(enter exit to terminate):";
         cin>>cont;
     }
 
